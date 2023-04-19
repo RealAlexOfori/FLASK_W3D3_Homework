@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Orders</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Book Store Customer Orders!</h1>
+        {% for order in orders %}
+        <p>
+            {{order.customer_name}}: <b>{{ order.order_date}}</b>: <b>{{ order.quantity}}</b> : <b>{{ order.book_title}}</b><a href= "http://localhost:4999/orders/{{ order.id }}">Order Link</a> </a>
+        </p>
+        {% endfor %}
+</body>
+</html>
